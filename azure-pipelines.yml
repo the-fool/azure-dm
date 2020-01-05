@@ -27,6 +27,7 @@ steps:
   displayName: 'List contents'
 
 - task: DockerCompose@0
+  displayName: Apply the Folders config
   inputs:
     containerregistrytype: 'Container Registry'
     dockerComposeFile: 'docker-compose.yaml'

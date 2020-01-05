@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
 
+cd /pipeline
+
 echo "Authenticating with SA key"
-/pipeline/auth.sh
+./auth.sh
 
 exec "$@"
