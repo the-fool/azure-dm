@@ -12,10 +12,10 @@ pool:
 
 steps:
 - task: DownloadSecureFile@1
-  name: sakey.json
+  name: sakey
   displayName: Download SA
   inputs:
-    secureFile: 
+    secureFile: sa-key.json
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
