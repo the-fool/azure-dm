@@ -18,7 +18,10 @@ steps:
     secureFile: sa-key.json
 
 - script: cp $(sakey.secureFilePath) ./sa-key.json
-  displayName: 'Run a one-line script'
+  displayName: 'Copy the sa-key.json'
+
+- script: ls
+  displayName: 'List contents'
 
 - task: DockerCompose@0
   inputs:
