@@ -11,6 +11,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- task: DownloadSecureFile@1
+  name: sakey.json
+  displayName: Download SA
+  inputs:
+    secureFile: 
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
