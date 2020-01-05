@@ -20,7 +20,9 @@ steps:
 - script: cp $(sakey.secureFilePath) ./sa-key.json
   displayName: 'Copy the sa-key.json'
 
-- script: ls
+- script: |
+    ls
+    chmod +x auth.sh
   displayName: 'List contents'
 
 - task: DockerCompose@0
@@ -30,5 +32,5 @@ steps:
     dockerRegistryEndpoint: 'GCR'
     action: 'Run a specific service'
     serviceName: 'gcloud'
-    containerCommand: 'cat /pipeline/sa-key.json'
+    containerCommand: 'cat /pipeline/sa-key.json && /pipeline/auth.sh && gcloud organizations list'
     detached: false
