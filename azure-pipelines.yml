@@ -22,8 +22,7 @@ steps:
 
 - script: |
     ls
-    chmod +x auth.sh
-    chmod +x entrypoint.sh
+    chmod +x *.sh
     
   displayName: 'List contents'
 
