@@ -34,6 +34,6 @@ steps:
     dockerRegistryEndpoint: 'GCR'
     action: 'Run a specific service'
     serviceName: 'gcloud'
-    containerCommand: /pipeline/dm.sh
+    containerCommand: gcloud organizations list; /pipeline/dm.sh
     # containerCommand: cat /pipeline/sa-key.json 
     detached: false
