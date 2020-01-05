@@ -7,4 +7,6 @@ services:
                   - type: bind
                     source: .
                     target: /pipeline
-                entrypoint: '/bin/bash -c'
+                entrypoint: 
+                  - '/bin/bash' 
+                  - '-c'
