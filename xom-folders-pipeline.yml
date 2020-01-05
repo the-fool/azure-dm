@@ -31,5 +31,4 @@ steps:
     containerCommand: /pipeline/dm.sh
     detached: false
     dockerComposeFileArgs: |
-      ORGANIZATION=279306703376
       DM_PROJECT=premium-modem-261922

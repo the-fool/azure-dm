@@ -1,7 +1,7 @@
 #!/bin/bash
 env
 
-gcloud config set project premium $DM_PROJECT
+gcloud config set project $DM_PROJECT
 
 gcloud deployment-manager deployments describe xom-app-folders > /dev/null 2>&1
 if [ $? -eq 0 ]; then
