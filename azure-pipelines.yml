@@ -17,14 +17,9 @@ steps:
   inputs:
     secureFile: sa-key.json
 
-- script: cat $(sakey.secureFilePath)
+- script: cp $(sakey.secureFilePath) ./sa-key.json
   displayName: 'Run a one-line script'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-    curl google.com | echo
-  displayName: 'Run a multi-line script'
 - task: DockerCompose@0
   inputs:
     containerregistrytype: 'Container Registry'
