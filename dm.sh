@@ -7,4 +7,4 @@ else
    COMMAND=create
 fi
 
-gcloud deployment-manager deployments $COMMAND xom-app-folders --config xom-app-folders.yaml
+gcloud deployment-manager deployments $COMMAND xom-app-folders --config configs/xom-apps-folders.yaml
