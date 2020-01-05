@@ -8,3 +8,5 @@ services:
                     source: .
                     target: /pipeline
                 entrypoint: /pipeline/entrypoint.sh
+                environment:
+                  - ORGANIZATION=${ORGANIZATION}
