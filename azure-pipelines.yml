@@ -23,6 +23,7 @@ steps:
   inputs:
     containerregistrytype: 'Container Registry'
     dockerComposeFile: '**/docker-compose.yml'
+    dockerRegistryEndpoint: 'GCR'
     action: 'Run a specific service'
     serviceName: 'gcloud'
     containerCommand: 'gcloud organizations list'
