@@ -1,6 +1,8 @@
 #!/bin/bash
 env
-gcloud config set project premium-modem-261922
+
+gcloud config set project premium $DM_PROJECT
+
 gcloud deployment-manager deployments describe xom-app-folders > /dev/null 2>&1
 if [ $? -eq 0 ]; then
    COMMAND=update
