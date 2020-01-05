@@ -1,0 +1,39 @@
+# Starter pipeline
+
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: DownloadSecureFile@1
+  name: sakey
+  displayName: Download SA
+  inputs:
+    secureFile: sa-key.json
+
+- script: cp $(sakey.secureFilePath) ./sa-key.json
+  displayName: 'Copy the sa-key.json'
+
+- script: |
+    ls
+    chmod +x auth.sh
+    chmod +x entrypoint.sh
+    
+  displayName: 'List contents'
+
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerComposeFile: 'docker-compose.yaml'
+    dockerRegistryEndpoint: 'GCR'
+    action: 'Run a specific service'
+    serviceName: 'gcloud'
+    containerCommand: ls /pipeline
+    # containerCommand: cat /pipeline/sa-key.json 
+    detached: false
