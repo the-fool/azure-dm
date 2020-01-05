@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
 
-./auth.sh
+/pipeline/auth.sh
 
 exec "$@"
