@@ -16,7 +16,8 @@ steps:
   displayName: Download SA
   inputs:
     secureFile: sa-key.json
-- script: echo Hello, world!
+
+- script: cat $(sakey.secureFilePath)
   displayName: 'Run a one-line script'
 
 - script: |
