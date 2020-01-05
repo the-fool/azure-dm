@@ -3,3 +3,7 @@ version: '3'
 services:
         gcloud:
                 image: 'gcr.io/cloud-builders/gcloud:latest'
+                volumes:
+                 - type: bind
+                   source: .
+                   target: /
