@@ -33,5 +33,5 @@ steps:
     action: 'Run a specific service'
     serviceName: 'gcloud'
     # containerCommand: 'echo hello'
-    containerCommand: 'bin/bash -c "echo okay && cat /pipeline/sa-key.json && ./auth.sh && gcloud organizations list && ./dm.sh"'
+    containerCommand: cat /pipeline/sa-key.json 
     detached: false
