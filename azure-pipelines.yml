@@ -1,4 +1,5 @@
 # Starter pipeline
+
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
@@ -18,3 +19,11 @@ steps:
     echo See https://aka.ms/yaml
     curl google.com | echo
   displayName: 'Run a multi-line script'
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Run a specific service'
+    serviceName: 'gcloud'
+    containerCommand: 'gcloud organizations list'
+    detached: false
