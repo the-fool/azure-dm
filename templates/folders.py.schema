@@ -1,0 +1,27 @@
+info:
+    title: Folder Layout
+
+required:
+    - parent_node
+    - owners
+    
+properties:
+    owners:
+        type: array
+        items:
+            type: string
+
+    parent_node:
+        type: object
+        required:
+            - type
+            - id
+        properties:
+            type:
+                type: string
+                enum:
+                    - organization
+                    - folder
+            id:
+                type: [integer, string]
+                pattern: ^[0-9]{8,25}$
