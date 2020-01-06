@@ -10,6 +10,12 @@ properties:
         type: array
         items:
             type: string
+        description: |
+            A list of groups or users that will "own" this application. 
+            Each of these identities will be given IAM permission to manage this application.
+            Format for an owner must be either: 
+               user:email_account@exxonmobil.com 
+               group:email_account@exxonmobil.com
 
     parent_node:
         type: object

@@ -1,0 +1,12 @@
+imports: 
+  - path: ../templates/app.py
+    name: app.py
+
+resources:
+  - name: xom-appy
+    type: app.py
+    properties:
+      root_node: 88888888
+      dev_node: 7777777
+      prd_node: 99999999
+      billing_account_id: AAAA-1111-2222-FFFF
