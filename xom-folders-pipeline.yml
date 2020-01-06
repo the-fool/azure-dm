@@ -25,7 +25,7 @@ steps:
   inputs:
     containerregistrytype: 'Container Registry'
     dockerComposeFile: 'docker-compose.yaml'
-    dockerRegistryEndpoint: 'GCR'
+    dockerRegistryEndpoint: 'GoogleContainerRegistry'
     action: 'Run a specific service'
     serviceName: 'gcloud'
     containerCommand: /pipeline/dm.sh
